@@ -47,12 +47,13 @@ function createMovie(movieArray) {
 let counter = 0;
 function prevBtn() {
 	let offsetLeft = pagesLists.offsetLeft;
-	console.log(offsetLeft)
 	if(offsetLeft >= 55) {
+		console.log(counter)
 		return;
 	}else {
 		counter--;
-		pagesLists.style.left = `-${counter * 41.5}px`;
+		pagesLists.style.left = `-${counter * 41.5+41.5}px`;
+		console.log(counter)
 	}
 }
 
@@ -60,11 +61,17 @@ function nextBtn() {
 	let offsetRightPages = pages.getBoundingClientRect().right;
 	let offsetRightPagesList = pagesLists.getBoundingClientRect().right;
 
+	if(counter == -1) {
+		counter = 0;
+	}
+
 	if(offsetRightPages > offsetRightPagesList){
-		pagesLists.style.left = `-${counter * 41.5 + 41.5}px`;
+		pagesLists.style.left = `-${counter * 41.5+41.5}px`;
+		console.log(counter)
 		return;
 	}else {
 		counter++;
 		pagesLists.style.left = `-${counter * 41.5}px`;
+		console.log(counter)
 	}
 }
