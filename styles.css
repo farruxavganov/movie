@@ -85,79 +85,58 @@ main {
     background-color: darkslateblue;
 }
 
-.container {
+.pages {
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    width: max-content;
+    background-color: #fff;
+    width: 100%;
     max-width: 400px;
+    height: 40px;
     margin: 10px auto;
+    overflow: hidden;
+    padding: 0 55px;
 }
 
-.pages {
-    position: relative;
+.pages__inner {
     width: 100%;
     height: 100%;
-    background-color: darkslateblue;
-    display: flex;
-    overflow: hidden;
+    background: #666
 }
 
-
-.control__btn {
-    position: relative;
-    z-index: 1;
+.pages__con {
+    position: absolute;
+    width: 55px;
     height: 100%;
-    border: none;
-    padding: 10px;
-    background-color: #5e54a0;
-    color: #fff;
-    font-size: 1rem;
-    border: 1px solid #ccc;
 }
 
+.prev {
+    left: 0;
+    top: 0;
+}
+
+.next {
+    right: 0;
+    top: 0;
+}
 .pages__lists {
-    position: relative;
-    list-style-type: none;
-    width: max-content;
-    height: 40px;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    z-index: 0;
+    flex-wrap: nowrap;
+    width: max-content;
+    height: 100%;
 }
 
 .pages__list {
     flex-shrink: 0;
-    width: 41.5px;
+    width: calc(100% / 4);
     height: 100%;
 }
 
 .pages__btn {
-    
-    display: inline-block;
     width: 100%;
-    height: 100%;
-    border-radius: 0;
-    background-color: #5e54a0;
-    border: 1px solid #ccc;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.pages__btn.active {
-    background-color: darkslateblue;
-}
-
-.control__btn:hover, .pages__btn:hover {
-    cursor: pointer;
-}
-
-.control__btn:active, .pages__btn:active {
-    transform: scale(.9);
-}
-.next {
-    position: absolute;
-    right: 0;
+    height: 100%
 }
 @media (max-width: 922px){
     .movie {

@@ -1,7 +1,7 @@
 const movies = document.querySelector(".movies");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
-const pages = document.querySelector(".pages");
+const pagesInner = document.querySelector(".pages__inner");
 const pagesLists = document.querySelector(".pages__lists");
 
 const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
@@ -11,8 +11,8 @@ window.onload = function () {
 	getMovies(API_URL);
 }
 
-prev.addEventListener("click", prevBtn);
-next.addEventListener("click", nextBtn);
+// prev.addEventListener("click", prevBtn);
+// next.addEventListener("click", nextBtn);
 
 async function getMovies(url) {
 	let req = await fetch(url);
@@ -44,34 +44,25 @@ function createMovie(movieArray) {
 
 
 // btens control
-let counter = 0;
-function prevBtn() {
-	let offsetLeft = pagesLists.offsetLeft;
-	if(offsetLeft >= 55) {
-		console.log(counter)
-		return;
-	}else {
-		counter--;
-		pagesLists.style.left = `-${counter * 41.5+41.5}px`;
-		console.log(counter)
-	}
-}
+// let counter = 0;
+// function prevBtn() {
+// 	let offsetLeft = pagesLists.offsetLeft;
+// 	if(offsetLeft >= 0) {
+// 		return;
+// 	}else {
+// 		counter--;
+// 		pagesLists.style.left = `-${counter * 41.5}px`;
+// 	}
+// }
 
-function nextBtn() {
-	let offsetRightPages = pages.getBoundingClientRect().right;
-	let offsetRightPagesList = pagesLists.getBoundingClientRect().right;
+// function nextBtn() {
+// 	let offsetRightPages = pagesInner.getBoundingClientRect().right;
+// 	let offsetRightPagesList = pagesLists.getBoundingClientRect().right;
 
-	if(counter == -1) {
-		counter = 0;
-	}
-
-	if(offsetRightPages > offsetRightPagesList){
-		pagesLists.style.left = `-${counter * 41.5+41.5}px`;
-		console.log(counter)
-		return;
-	}else {
-		counter++;
-		pagesLists.style.left = `-${counter * 41.5}px`;
-		console.log(counter)
-	}
-}
+// 	if(offsetRightPages > offsetRightPagesList){
+// 		return;
+// 	}else {
+// 		counter++;
+// 		pagesLists.style.left = `-${counter * 41.5}px`;
+// 	}
+// }
