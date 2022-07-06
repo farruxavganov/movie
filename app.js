@@ -8,9 +8,7 @@ const pagination = document.querySelector(".pages");
 const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=";
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 
-let totolPages;
-let getMoviesCon = true;
-let paginationCon = false;
+let totolPages = 99;
 
 window.onload = function () {
 	getMovies(API_URL);
@@ -22,12 +20,7 @@ window.onload = function () {
 async function getMovies(url, page = 1) {
 	let req = await fetch(url + page);
 	let res = await req.json();
-
-	totolPages = res.total_pages;
-	if(getMoviesCon){
-		paginationControl(totolPages, 1);
-		getMoviesCon = false;
-	}
+	console.log(totolPages)
 	createMovie(res.results);
 	
 
@@ -54,9 +47,8 @@ function createMovie(movieArray) {
 }
 paginationControl(totolPages, 1);
 function paginationControl(totolPages, page){
-	if(paginationCon){
-		getMovies(API_URL, page)
-	}
+	
+	getMovies(API_URL, page)
 	paginationCon = true;
 	let beforePage = page - 1;
 	let afterPage = page + 1;
