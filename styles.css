@@ -83,11 +83,38 @@ main {
 }
 
 .card {
+    position: relative;
     background-color: #5e54a0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
+.card__info {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    transition: top .5s ease;
+}
+.card:hover .card__info {
+    top: 0;
+}
+.card__info h3 {
+    margin: 10px 0;
+    color: #666;
+}
+
+.card__info p {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
 .card__head {
     width: 100%;
     height: 200px;

@@ -54,6 +54,10 @@ function createMovie(movieArray) {
                          <h3 class="card__title">${movie.title}</h3>
                          <span class="card__ball">${movie.vote_average}</span>
                     </div>
+                    <div class="card__info">
+                    	<h3>Overview</h3>
+                    	<p>${movie.overview}</p>
+                    </div>
                 </div>
              </li>`
 		);
