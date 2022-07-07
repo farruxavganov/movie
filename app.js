@@ -1,3 +1,4 @@
+const searchForm = document.querySelector(".search-form");
 const search = document.querySelector(".search");
 const movies = document.querySelector(".movies");
 const prev = document.querySelector(".prev");
@@ -16,6 +17,9 @@ window.onload = function () {
 	getMovies(API_URL);
 }
 
+searchForm.addEventListener("submit", function (e) {
+	e.preventDefault();
+})
 search.addEventListener("input", getValue);
 
 function getValue(e) {
