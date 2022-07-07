@@ -19,8 +19,44 @@ body {
     min-height: 100vh;
 }
 
-img {
-    width: 100px;
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #5e54a0;
+    box-shadow: 0 0 2px 1px #333;
+}
+
+.search-form {
+    width: 250px;
+    margin-left: auto;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.search {
+    padding: 7px;
+    margin-top: 13px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 0 2px 1px #333;
+    background-color: transparent;
+    color: #fff;
+}
+
+.search::placeholder {
+    color: #fff;
+}
+
+.search:focus {
+    outline: 1px solid #ccc;
 }
 
 main {
